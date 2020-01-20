@@ -29,3 +29,5 @@ Stack trace:
 [20-Jan-2020 18:56:23 UTC] PHP   6. do_action() C:\Users\loved\Local Sites\amazing-college\app\public\wp-settings.php:523
 [20-Jan-2020 18:56:23 UTC] PHP   7. WP_Hook->do_action() C:\Users\loved\Local Sites\amazing-college\app\public\wp-includes\plugin.php:478
 [20-Jan-2020 18:56:23 UTC] PHP   8. WP_Hook->apply_filters() C:\Users\loved\Local Sites\amazing-college\app\public\wp-includes\class-wp-hook.php:312
+[20-Jan-2020 19:36:40 UTC] PHP Parse error:  syntax error, unexpected ''rewrite'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in C:\Users\loved\Local Sites\amazing-college\app\public\wp-content\mu-plugins\university-post-types.php on line 5
+[20-Jan-2020 19:36:41 UTC] PHP Parse error:  syntax error, unexpected ''rewrite'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in C:\Users\loved\Local Sites\amazing-college\app\public\wp-content\mu-plugins\university-post-types.php on line 5
