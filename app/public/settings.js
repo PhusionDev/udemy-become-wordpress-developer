@@ -1,4 +1,4 @@
-exports.themeLocation = '/wp-content/themes/fictional-university-theme/';
+exports.themeLocation = './wp-content/themes/fictional-university-theme/';
 exports.urlToPreview = 'http://amazing-college.local/';
 
 // If you're using Local by Flywheel you will

@@ -19,3 +19,13 @@ Stack trace:
 #2 C:\Users\loved\Local Sites\amazing-college\app\public\index.php(17): require('C:\\Users\\loved\\...')
 #3 {main}
   thrown in C:\Users\loved\Local Sites\amazing-college\app\public\wp-content\themes\fictional-university-theme\index.php on line 22
+[20-Jan-2020 18:56:23 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'university_post_types' not found or invalid function name in C:\Users\loved\Local Sites\amazing-college\app\public\wp-includes\class-wp-hook.php on line 288
+[20-Jan-2020 18:56:23 UTC] PHP Stack trace:
+[20-Jan-2020 18:56:23 UTC] PHP   1. {main}() C:\Users\loved\Local Sites\amazing-college\app\public\index.php:0
+[20-Jan-2020 18:56:23 UTC] PHP   2. require() C:\Users\loved\Local Sites\amazing-college\app\public\index.php:17
+[20-Jan-2020 18:56:23 UTC] PHP   3. require_once() C:\Users\loved\Local Sites\amazing-college\app\public\wp-blog-header.php:13
+[20-Jan-2020 18:56:23 UTC] PHP   4. require_once() C:\Users\loved\Local Sites\amazing-college\app\public\wp-load.php:37
+[20-Jan-2020 18:56:23 UTC] PHP   5. require_once() C:\Users\loved\Local Sites\amazing-college\app\public\wp-config.php:77
+[20-Jan-2020 18:56:23 UTC] PHP   6. do_action() C:\Users\loved\Local Sites\amazing-college\app\public\wp-settings.php:523
+[20-Jan-2020 18:56:23 UTC] PHP   7. WP_Hook->do_action() C:\Users\loved\Local Sites\amazing-college\app\public\wp-includes\plugin.php:478
+[20-Jan-2020 18:56:23 UTC] PHP   8. WP_Hook->apply_filters() C:\Users\loved\Local Sites\amazing-college\app\public\wp-includes\class-wp-hook.php:312
