@@ -12,7 +12,7 @@ function universityRegisterSearch() {
 
 function universitySearchResults( $data ) {
     $mainQuery = new WP_Query( array(
-        'post_type' => array( 'post', 'page', 'professor', 'program', 'event' ),
+        'post_type' => array( 'post', 'page', 'professor', 'program', 'campus', 'event' ),
         's' => sanitize_text_field( $data['term'] )
     ));
 
@@ -20,7 +20,8 @@ function universitySearchResults( $data ) {
         'generalInfo' => array(),
         'professors' => array(),
         'programs' => array(),
-        'events' => array()
+        'events' => array(),
+        'campuses' => array()
     );
 
     while ( $mainQuery->have_posts() ) {
@@ -43,10 +44,25 @@ function universitySearchResults( $data ) {
         }
 
         if ( get_post_type() == 'program' ) {
+            $relatedCampuses = get_field('related_campus');
+            foreach($relatedCampuses as $campus) {
+                array_push($results['campuses'], array(
+                    'title' => get_the_title($campus),
+                    'permalink' => get_the_permalink($campus)
+                ));
+            }
+
             array_push( $results['programs'], array(
                 'title' => get_the_title(),
                 'permalink' => get_the_permalink(),
                 'id' => get_the_id()
+            ));
+        }
+
+        if (get_post_type() == 'campus') {
+            array_push($results['campuses'], array(
+                'title' => get_the_title(),
+                'permalink' => get_the_permalink()
             ));
         }
 
@@ -97,8 +113,15 @@ function universitySearchResults( $data ) {
             }
         }
     
+
         $results[ 'professors' ] = array_values(
             array_unique( $results[ 'professors' ], SORT_REGULAR )
+        );
+        $results[ 'campuses' ] = array_values(
+            array_unique( $results[ 'campuses' ], SORT_REGULAR )
+        );
+        $results[ 'events' ] = array_values(
+            array_unique( $results[ 'events' ], SORT_REGULAR )
         );
     }
 
