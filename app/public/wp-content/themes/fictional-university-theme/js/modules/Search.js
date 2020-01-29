@@ -117,6 +117,13 @@ class Search {
         this.searchField.val('')
         setTimeout(() => this.searchField.focus(), 301)
         this.isOverlayOpen = true;
+        /*
+        return false; is like calling both event.preventDefault(); and
+        event.stopPropagation(); However, with vanilla JS you would need
+        to use the above two methods to achieve the same result.
+        This will prevent the default link/a element behavior.
+        */
+        return false;
     }
 
     closeOverlay() {

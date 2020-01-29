@@ -41,7 +41,6 @@ function universitySearchResults( $data ) {
                 'permalink' => get_the_permalink(),
                 'image' => get_the_post_thumbnail_url( 0, 'professorLandscape' )
             ));
-            
         }
 
         if ( get_post_type() == 'program' ) {
