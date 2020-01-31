@@ -33,7 +33,8 @@ if (!$args['photo']) {
       </div>
     </div>  
   </div>
-<?php }
+<?php
+}
 
 function university_files() {
     wp_enqueue_script('googleMap', '//maps.googleapis.com/maps/api/js?key=', NULL, microtime(), true);
@@ -136,3 +137,26 @@ function ourLoginCSS() {
     wp_enqueue_style('university_main_style', get_stylesheet_uri());
     wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
 }
+
+// Force note posts to be private
+add_filter('wp_insert_post_data', 'makeNotePrivate');
+
+function makeNotePrivate($data) {
+  if ($data['post_type'] == 'note' AND $data['post_status'] != 'trash') {
+    $data['post_status'] = "private";
+  }
+  
+  return $data;
+}
+
+// remove "Private: " from titles (not in lesson)
+// Use a regex to allow 'Private: ' in title if user manually entered it.
+function remove_private_prefix($title) {
+  if (get_post_status() == 'private') {
+    $regTitle = preg_replace('/^Private: /', '', $title);
+    return $regTitle;
+  } else {
+    return $title;
+  }
+}
+add_filter('the_title', 'remove_private_prefix');
