@@ -1,2 +1,3 @@
 /logs/
 /logs/php/error.log
+app/public/local.php
