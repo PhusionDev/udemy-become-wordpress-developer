@@ -99,5 +99,18 @@ function university_post_types() {
           'singular_name' => 'Like'
       )
     ));
+
+    // Frontpage Slide Type
+    register_post_type('frontpage_slide', array(
+      'public' => true,
+      'menu_icon' => 'dashicons-slides',
+      'labels' => array(
+          'name' => 'Frontpage Slides',
+          'add_new_item' => 'Add New Slide',
+          'edit_item' => 'Edit Slide',
+          'all_items' => 'All Slides',
+          'singular_name' => 'Frontpage Slide'
+      )
+  ));
 }
 add_action('init', 'university_post_types');
